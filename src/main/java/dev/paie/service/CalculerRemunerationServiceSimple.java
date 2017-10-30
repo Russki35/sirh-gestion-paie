@@ -3,8 +3,14 @@
  */
 package dev.paie.service;
 
+import java.math.BigDecimal;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import dev.paie.entite.BulletinSalaire;
+import dev.paie.entite.Grade;
 import dev.paie.entite.ResultatCalculRemuneration;
+import dev.paie.util.PaieUtils;
 
 
 /**
@@ -13,12 +19,18 @@ import dev.paie.entite.ResultatCalculRemuneration;
  */
 public class CalculerRemunerationServiceSimple implements CalculerRemunerationService {
 
-	/* (non-Javadoc)
-	 * @see dev.paie.service.CalculerRemunerationService#calculer(dev.paie.entite.BulletinSalaire)
-	 */
+	@Autowired private PaieUtils paieUtils;
+	
+	@Autowired private Grade grade;
+	
 	@Override
 	public ResultatCalculRemuneration calculer(BulletinSalaire bulletin) {
-		// TODO Auto-generated method stub
+		
+		String salaireBase = paieUtils.formaterBigDecimal(grade.getNbHeuresBase().multiply((grade.getTauxBase())));
+		
+		String salaireBrut = paieUtils.formaterBigDecimal((new BigDecimal(salaireBase)).add(bulletin.getPrimeExceptionnelle()));
+		
+		String retenueSalaire = 
 		return null;
 	}
 
