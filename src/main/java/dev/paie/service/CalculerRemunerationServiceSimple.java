@@ -30,7 +30,8 @@ public class CalculerRemunerationServiceSimple implements CalculerRemunerationSe
 		
 		String salaireBrut = paieUtils.formaterBigDecimal((new BigDecimal(salaireBase)).add(bulletin.getPrimeExceptionnelle()));
 		
-		String retenueSalaire = 
+	  
+				
 		return null;
 	}
 
