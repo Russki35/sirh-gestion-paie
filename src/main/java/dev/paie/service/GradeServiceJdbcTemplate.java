@@ -31,7 +31,7 @@ public class GradeServiceJdbcTemplate implements GradeService{
 	
 	@Override
 	public void sauvegarder(Grade nouveauGrade) {
-		String sql = "INSERT INTO GRADE (id, code, nbHeuresBases, tauxBases) VALUES (?,?,?,?)";
+		String sql = "INSERT INTO grade (id, code, nbHeuresBases, tauxBase) VALUES (?,?,?,?)";
 		this.jdbcTemplate.update(sql, nouveauGrade.getId(), nouveauGrade.getCode(), nouveauGrade.getNbHeuresBase(), nouveauGrade.getTauxBase());
 		
 	}

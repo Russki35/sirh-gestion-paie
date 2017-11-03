@@ -33,7 +33,7 @@ public class GradeServiceJdbcTemplateTest {
 		newGrade.setCode("PG");
 		newGrade.setNbHeuresBase(new BigDecimal(15));
 		newGrade.setTauxBase(new BigDecimal(2));
-		gradeService.sauvegarder(newGrade);
+		gradeService.sauvegarder(newGrade); 
 	}
 	
 	// TODO vérifier qu'il est possible de récupérer le nouveau grade via la méthode lister

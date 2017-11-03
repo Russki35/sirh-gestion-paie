@@ -15,7 +15,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
  *
  */
 @Configuration
-@ComponentScan({ "dev.paie.service", "dev.paie.util"})
+
 public class ServicesConfig {
 
 	
