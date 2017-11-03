@@ -30,7 +30,7 @@ public class CotisationServiceJpa implements CotisationService {
 
 	@Override
 	public void mettreAJour(Cotisation cotisation) {
-	
+		em.merge(cotisation);
 	}
 
 	
