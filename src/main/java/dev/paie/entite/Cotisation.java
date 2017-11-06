@@ -7,49 +7,45 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
-@Entity
-@Table(name="Cotisation")
+import javax.persistence.NamedQuery;
 
+@Entity
+@NamedQuery(name="listerCotisations", query="SELECT c FROM Cotisation c")
 public class Cotisation {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@Column
+	
 	private String code;
-	@Column
+	
 	private String libelle;
-	@Column
+	
+	@Column(name = "taux_salarial")
 	private BigDecimal tauxSalarial;
-	@Column
+	
+	@Column(name = "taux_patronal")
 	private BigDecimal tauxPatronal;
-	
-	
-	
-	
+
 	public Cotisation() {
-		
+		super();
 	}
 
-
-	public Cotisation(Integer id, String code, String libelle, BigDecimal tauxSalarial, BigDecimal tauxPatronal) {
+	public Cotisation(String code, String libelle, BigDecimal tauxSalarial, BigDecimal tauxPatronal) {
 		super();
-		this.id = id;
 		this.code = code;
 		this.libelle = libelle;
 		this.tauxSalarial = tauxSalarial;
 		this.tauxPatronal = tauxPatronal;
 	}
-	
-	
+
 	public String getCode() {
 		return code;
 	}
 	public void setCode(String code) {
 		this.code = code;
 	}
-	
+
 	public String getLibelle() {
 		return libelle;
 	}
@@ -74,9 +70,9 @@ public class Cotisation {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
-	
-	
-	
+
+
+
+
 
 }
