@@ -27,5 +27,21 @@ public class RemunerationEmployeController {
 		mv.addObject("prefixMatricule", "M00");
 		return mv;
 	}
+	
+	@RequestMapping(method = RequestMethod.GET, path = "/creerBult")
+	public ModelAndView creerBulletin() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("employes/creerBulletin");
+		mv.addObject("prefixMatricule", "M00");
+		return mv;
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, path = "/listerBult")
+	public ModelAndView listerBulletin() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("employes/listerBulletin");
+		mv.addObject("prefixMatricule", "M00");
+		return mv;
+	}
 }
 

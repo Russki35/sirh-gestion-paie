@@ -40,9 +40,9 @@
 
 			<!-- Text input-->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="textinput">Matricule</label>
+				<label class="col-md-4 control-label" for="matricule">Matricule</label>
 				<div class="col-md-5">
-					<input id="textinput" name="textinput" type="text"
+					<input id="matricule" name="matricule" type="text"
 						placeholder="Matricule" class="form-control input-md" required="">
 
 				</div>
