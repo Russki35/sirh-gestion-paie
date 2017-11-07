@@ -39,8 +39,9 @@
 		<div class="col-md-5">
 			<select id="periode" name=periode " class="form-control"
 				multiple="multiple">
-				<option value="1">01/01/2017 - 31/12/2017</option>
-				<option value="2">01/02/2017 - 28/02/2017</option>
+				<c:forEach var="periode" items="${periodes}">
+					<option value="${periode.dateDebut} - ${periode.dateFin}">${periode.dateDebut} - ${periode.dateFin}</option>
+				</c:forEach>
 			</select>
 		</div>
 	</div>

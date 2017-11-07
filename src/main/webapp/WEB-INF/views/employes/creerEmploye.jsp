@@ -39,50 +39,45 @@
 			<legend>Ajouter un employé</legend>
 
 			<!-- Text input-->
-			<div class="form-group">
-				<label class="col-md-4 control-label" for="matricule">Matricule</label>
-				<div class="col-md-5">
+			<div class="row form-group">
+				<label class="col-2 control-label" for="matricule">Matricule</label>
+				<div class="col-10">
 					<input id="matricule" name="matricule" type="text"
 						placeholder="Matricule" class="form-control input-md" required="">
 
 				</div>
 			</div>
 
-			<!-- Select Multiple -->
-			<div class="form-group">
-				<label class="col-md-4 control-label" for="entreprise">Entreprise</label>
-				<div class="col-md-5">
-					<select id="entreprise" name="entreprise" class="form-control"
-						multiple="multiple">
-						<option value="1">Entreprise 1</option>
-						<option value="2">Entreprise 2</option>
-						<option value="3">Entreprise 3</option>
+			<div class="row form-group">
+				<label class="col-2 control-label" for="entreprise">Entreprise</label>
+				<div class="col-10">
+					<select id="entreprise" name="entreprise" class="form-control">
+						<c:forEach var="entreprise" items="${entreprises}">
+							<option value="${entreprise.id}">${entreprise.denomination}</option>
+						</c:forEach>
 					</select>
 				</div>
 			</div>
 
-			<!-- Select Multiple -->
-			<div class="form-group">
-				<label class="col-md-4 control-label" for="profil">Profil</label>
-				<div class="col-md-5">
-					<select id="profil" name="profil" class="form-control"
-						multiple="multiple">
-						<option value="1">Cadre</option>
-						<option value="2">Technicien</option>
-						<option value="">Stagiaire</option>
+
+			<div class="row form-group">
+				<label class="col-2 control-label" for="profil">Profil</label>
+				<div class="col-10">
+					<select id="profil" name="profil" class="form-control">
+						<c:forEach var="profil" items="${profils}">
+							<option value="${profil.id}">${profil.code}</option>
+						</c:forEach>
 					</select>
 				</div>
 			</div>
 
-			<!-- Select Multiple -->
-			<div class="form-group">
-				<label class="col-md-4 control-label" for="grade">Grade</label>
-				<div class="col-md-5">
-					<select id="grade" name="grade" class="form-control"
-						multiple="multiple">
-						<option value="1">Grade A - 20 000 € / an</option>
-						<option value="2">Grade B - 30 000 € / an</option>
-						<option value="">Grade C - 40 000 € / an</option>
+			<div class="row form-group">
+				<label class="col-2 control-label" for="grade">Grade</label>
+				<div class="col-10">
+					<select id="grade" name="grade" class="form-control">
+						<c:forEach var="grade" items="${grades}">
+							<option value="${grade.id}">${grade.code}</option>
+						</c:forEach>
 					</select>
 				</div>
 			</div>
