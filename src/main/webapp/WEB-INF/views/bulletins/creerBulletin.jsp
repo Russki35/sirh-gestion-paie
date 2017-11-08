@@ -40,7 +40,7 @@
 			<select id="periode" name=periode " class="form-control"
 				multiple="multiple">
 				<c:forEach var="periode" items="${periodes}">
-					<option value="${periode.dateDebut} - ${periode.dateFin}">${periode.dateDebut} - ${periode.dateFin}</option>
+					<option value="${periode.id} - ${periode.dateFin}">${periode.dateDebut} - ${periode.dateFin}</option>
 				</c:forEach>
 			</select>
 		</div>
@@ -52,9 +52,9 @@
 		<div class="col-md-5">
 			<select id="matricule" name="matricule" class="form-control"
 				multiple="multiple">
-				<option value="1">M01</option>
-				<option value="2">M02</option>
-				<option value="">M03</option>
+				<c:forEach var="matricule" items="${matricules}">
+						<option value="${matricule}">${matricule}</option>
+				</c:forEach>
 			</select>
 		</div>
 	</div>
@@ -63,7 +63,7 @@
 		<label class="col-md-4 control-label" for="prime">Prime exceptionnelle</label>
 		<div class="col-md-5">
 			<input id="prime" name="prime" type="text"
-				 class="form-control input-md" required="">
+				 class="form-control input-md" required>
 
 		</div>
 	</div>
